@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "Plano Alimentar",
+  "navigationBarBackgroundColor": "#4CAF50",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#f5f5f5",
+  "enablePullDownRefresh": true,
+  "usingComponents": {}
+} 

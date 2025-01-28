@@ -1,0 +1,78 @@
+<view class="container">
+  <!-- Seletor de Dias -->
+  <scroll-view class="days-selector" scroll-x="true">
+    <view class="days-list">
+      <view class="day-item {{diaAtual === 0 ? 'active' : ''}}" bindtap="mudarDia" data-dia="0">
+        <text class="day-name">Segunda</text>
+      </view>
+      <view class="day-item {{diaAtual === 1 ? 'active' : ''}}" bindtap="mudarDia" data-dia="1">
+        <text class="day-name">Terça</text>
+      </view>
+      <view class="day-item {{diaAtual === 2 ? 'active' : ''}}" bindtap="mudarDia" data-dia="2">
+        <text class="day-name">Quarta</text>
+      </view>
+      <view class="day-item {{diaAtual === 3 ? 'active' : ''}}" bindtap="mudarDia" data-dia="3">
+        <text class="day-name">Quinta</text>
+      </view>
+      <view class="day-item {{diaAtual === 4 ? 'active' : ''}}" bindtap="mudarDia" data-dia="4">
+        <text class="day-name">Sexta</text>
+      </view>
+      <view class="day-item {{diaAtual === 5 ? 'active' : ''}}" bindtap="mudarDia" data-dia="5">
+        <text class="day-name">Sábado</text>
+      </view>
+      <view class="day-item {{diaAtual === 6 ? 'active' : ''}}" bindtap="mudarDia" data-dia="6">
+        <text class="day-name">Domingo</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- Lista de Refeições -->
+  <view class="meals-list">
+    <block wx:for="{{planoSemanal[diaAtual].refeicoes}}" wx:key="horario">
+      <view class="meal-card">
+        <view class="meal-header">
+          <view class="meal-info">
+            <text class="meal-type">{{item.tipo}}</text>
+            <text class="meal-time">{{item.horario}}</text>
+          </view>
+          <text class="meal-calories">{{item.calorias}} kcal</text>
+        </view>
+        
+        <view class="meal-foods">
+          <block wx:for="{{item.alimentos}}" wx:for-item="alimento" wx:key="*this">
+            <text class="food-item">{{alimento}}</text>
+          </block>
+        </view>
+        
+        <view class="meal-actions">
+          <button class="action-button" bindtap="editarRefeicao" data-index="{{index}}">
+            Editar
+          </button>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- Botão Adicionar Refeição -->
+  <view class="add-meal">
+    <button class="add-button" bindtap="adicionarRefeicao">
+      + Adicionar Refeição
+    </button>
+  </view>
+
+  <!-- Resumo do Dia -->
+  <view class="day-summary">
+    <view class="summary-item">
+      <text class="summary-label">Total de Calorias</text>
+      <text class="summary-value">1850 kcal</text>
+    </view>
+    <view class="summary-item">
+      <text class="summary-label">Refeições</text>
+      <text class="summary-value">5</text>
+    </view>
+    <view class="summary-item">
+      <text class="summary-label">Proteínas</text>
+      <text class="summary-value">120g</text>
+    </view>
+  </view>
+</view> 

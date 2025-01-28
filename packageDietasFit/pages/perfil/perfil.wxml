@@ -1,0 +1,81 @@
+<view class="container">
+  <!-- Cabeçalho do Perfil -->
+  <view class="profile-header">
+    <image class="profile-avatar" src="{{userInfo.avatarUrl || '/images/default-avatar.png'}}"></image>
+    <view class="profile-info">
+      <text class="profile-name">{{userInfo.nickName || 'Visitante'}}</text>
+      <text class="profile-subtitle">{{dadosPerfil.objetivo}}</text>
+    </view>
+  </view>
+
+  <!-- Dados Principais -->
+  <view class="section">
+    <text class="section-title">Dados Pessoais</text>
+    <view class="data-grid">
+      <view class="data-item">
+        <text class="data-label">Peso</text>
+        <text class="data-value">{{dadosPerfil.peso}}kg</text>
+      </view>
+      <view class="data-item">
+        <text class="data-label">Altura</text>
+        <text class="data-value">{{dadosPerfil.altura}}cm</text>
+      </view>
+      <view class="data-item">
+        <text class="data-label">Idade</text>
+        <text class="data-value">{{dadosPerfil.idade}} anos</text>
+      </view>
+      <view class="data-item">
+        <text class="data-label">Gênero</text>
+        <text class="data-value">{{dadosPerfil.genero}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Histórico de Medidas -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">Histórico de Medidas</text>
+      <button class="add-button" bindtap="adicionarMedida">+ Nova Medida</button>
+    </view>
+    <view class="history-list">
+      <block wx:for="{{historicoMedidas}}" wx:key="data">
+        <view class="history-item">
+          <text class="history-date">{{item.data}}</text>
+          <view class="history-values">
+            <text>{{item.peso}}kg</text>
+            <text>{{item.percentualGordura}}% gordura</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- Preferências -->
+  <view class="section">
+    <text class="section-title">Preferências Alimentares</text>
+    <view class="preferences-list">
+      <view class="preference-group">
+        <text class="preference-label">Restrições:</text>
+        <view class="tags">
+          <text wx:for="{{preferencias.restricoesAlimentares}}" wx:key="*this" class="tag">{{item}}</text>
+        </view>
+      </view>
+      <view class="preference-group">
+        <text class="preference-label">Alergias:</text>
+        <view class="tags">
+          <text wx:for="{{preferencias.alergias}}" wx:key="*this" class="tag">{{item}}</text>
+        </view>
+      </view>
+      <view class="preference-item">
+        <text class="preference-label">Meta Calórica Diária:</text>
+        <text class="preference-value">{{preferencias.objetivoCalorico}} kcal</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Botões de Ação -->
+  <view class="action-buttons">
+    <button class="primary-button" bindtap="atualizarPerfil">Atualizar Perfil</button>
+    <button class="secondary-button" bindtap="editarPreferencias">Editar Preferências</button>
+  </view>
+</view> 

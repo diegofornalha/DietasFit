@@ -1,0 +1,209 @@
+.container {
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* Estilos do Cabeçalho do Perfil */
+.profile-header {
+  background-color: #ffffff;
+  padding: 40rpx;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.profile-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  margin-right: 30rpx;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  display: block;
+}
+
+.profile-subtitle {
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 8rpx;
+  display: block;
+}
+
+/* Estilos das Seções */
+.section {
+  background-color: #ffffff;
+  padding: 30rpx;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+/* Estilos do Grid de Dados */
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20rpx;
+}
+
+.data-item {
+  background-color: #f8f8f8;
+  padding: 20rpx;
+  border-radius: 15rpx;
+}
+
+.data-label {
+  font-size: 24rpx;
+  color: #666;
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.data-value {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: bold;
+  display: block;
+}
+
+/* Estilos do Histórico */
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15rpx;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+  background-color: #f8f8f8;
+  border-radius: 15rpx;
+}
+
+.history-date {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.history-values {
+  display: flex;
+  gap: 20rpx;
+}
+
+.history-values text {
+  font-size: 28rpx;
+  color: #666;
+}
+
+/* Estilos das Preferências */
+.preferences-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.preference-group {
+  margin-bottom: 15rpx;
+}
+
+.preference-label {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+  display: block;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+}
+
+.tag {
+  background-color: #e8f5e9;
+  color: #4CAF50;
+  padding: 8rpx 20rpx;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+}
+
+.preference-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preference-value {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Estilos dos Botões */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  margin-top: 30rpx;
+}
+
+.primary-button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  font-size: 32rpx;
+  text-align: center;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.secondary-button {
+  background-color: #ffffff;
+  color: #4CAF50;
+  border: 2rpx solid #4CAF50;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.add-button {
+  background-color: transparent;
+  color: #4CAF50;
+  border: none;
+  font-size: 28rpx;
+  padding: 0;
+  line-height: 1;
+}
+
+.add-button::after {
+  border: none;
+} 

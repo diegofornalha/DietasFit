@@ -1,0 +1,73 @@
+<view class="container">
+  <!-- Barra de Pesquisa -->
+  <view class="search-bar">
+    <input 
+      class="search-input" 
+      placeholder="Buscar receitas..." 
+      bindinput="pesquisarReceitas"
+      value="{{pesquisa}}"
+    />
+  </view>
+
+  <!-- Categorias -->
+  <scroll-view class="categories" scroll-x="true">
+    <view class="categories-list">
+      <block wx:for="{{categorias}}" wx:key="*this">
+        <view 
+          class="category-item {{categoriaAtual === index ? 'active' : ''}}"
+          bindtap="mudarCategoria"
+          data-index="{{index}}"
+        >
+          <text class="category-name">{{item}}</text>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+
+  <!-- Lista de Receitas -->
+  <scroll-view class="recipes-list" scroll-y="true">
+    <block wx:for="{{receitas}}" wx:key="id">
+      <view class="recipe-card" bindtap="verDetalhes" data-id="{{item.id}}">
+        <image class="recipe-image" src="{{item.imagem}}" mode="aspectFill"></image>
+        
+        <view class="recipe-info">
+          <view class="recipe-header">
+            <text class="recipe-name">{{item.nome}}</text>
+            <view 
+              class="favorite-button {{item.favorito ? 'active' : ''}}" 
+              catchtap="toggleFavorito"
+              data-index="{{index}}"
+            >
+              <image 
+                class="favorite-icon" 
+                src="{{item.favorito ? '/images/heart-filled.png' : '/images/heart-outline.png'}}"
+              ></image>
+            </view>
+          </view>
+          
+          <view class="recipe-details">
+            <view class="detail-item">
+              <image class="detail-icon" src="/images/clock.png"></image>
+              <text class="detail-text">{{item.tempoPreparo}}</text>
+            </view>
+            <view class="detail-item">
+              <image class="detail-icon" src="/images/calories.png"></image>
+              <text class="detail-text">{{item.calorias}} kcal</text>
+            </view>
+          </view>
+
+          <view class="recipe-ingredients">
+            <text class="ingredients-title">Ingredientes principais:</text>
+            <view class="ingredients-list">
+              <text wx:for="{{item.ingredientes}}" 
+                    wx:for-item="ingrediente" 
+                    wx:key="*this" 
+                    class="ingredient-item"
+              >{{ingrediente}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view> 

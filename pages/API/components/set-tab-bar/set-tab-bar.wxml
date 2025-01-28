@@ -1,0 +1,32 @@
+<import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'tabBar'}}"/>
+
+  <view class="page-body">
+    <view class="btn-area">
+      <button bindtap="setTabBarBadge">
+        {{ !hasSetTabBarBadge ? 'Definir ícone de notificação na tab' : 'Remover ícone de notificação na tab' }}
+      </button>
+      <button bindtap="showTabBarRedDot">
+        {{ !hasShownTabBarRedDot ? 'Mostrar ponto vermelho' : 'Remover ponto vermelho'}}
+      </button>
+      <button bindtap="customStyle">
+        {{ !hasCustomedStyle ? 'Personalizar estilo da Tab' : 'Remover estilo personalizado'}}
+      </button>
+      <button bindtap="customItem">
+        {{ !hasCustomedItem ? 'Personalizar informações da Tab' : 'Remover informações personalizadas' }}
+      </button>
+      <button bindtap="hideTabBar">
+        {{ !hasHiddenTabBar ? 'Esconder TabBar' : 'Mostrar TabBar' }}
+      </button>
+    </view>
+
+    <view class="btn-area">
+      <button type="primary" bindtap="navigateBack">Voltar à página anterior</button>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

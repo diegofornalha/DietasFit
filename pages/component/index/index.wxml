@@ -1,0 +1,36 @@
+<view class="index">
+  <view class="index-hd">
+    <image class="index-logo" src="../resources/kind/logo.png"></image>
+    <view class="index-desc">A seguir, será exibida a capacidade dos componentes oficiais do mini programa. Os estilos dos componentes são apenas para referência.</view>
+    
+    <!-- Botão DietasFit movido para cá -->
+    <view class="dietas-fit-button-container">
+      <navigator url="/packageDietasFit/pages/index/index" class="dietas-fit-button" hover-class="dietas-fit-button-hover">
+        <text>Acessar DietasFit</text>
+      </navigator>
+    </view>
+  </view>
+  
+  <view class="index-bd">
+    <view class="kind-list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
+            <view class="kind-list-text">{{item.name}}</view>
+            <image class="kind-list-img" src="../resources/kind/{{item.id}}.png"></image>
+          </view>
+          <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+            <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+              <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="item">
+                <navigator url="/pages/component/{{page}}/{{page}}" class="navigator">
+                  <view class="navigator-text">{{page}}</view>
+                  <view class="navigator-arrow"></view>
+                </navigator>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

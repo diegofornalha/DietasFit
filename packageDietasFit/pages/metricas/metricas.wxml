@@ -1,0 +1,131 @@
+<view class="container">
+  <!-- Seletor de Período -->
+  <view class="period-selector">
+    <view 
+      class="period-item {{periodoSelecionado === 'semana' ? 'active' : ''}}"
+      bindtap="mudarPeriodo"
+      data-periodo="semana"
+    >
+      <text>Semana</text>
+    </view>
+    <view 
+      class="period-item {{periodoSelecionado === 'mes' ? 'active' : ''}}"
+      bindtap="mudarPeriodo"
+      data-periodo="mes"
+    >
+      <text>Mês</text>
+    </view>
+    <view 
+      class="period-item {{periodoSelecionado === 'ano' ? 'active' : ''}}"
+      bindtap="mudarPeriodo"
+      data-periodo="ano"
+    >
+      <text>Ano</text>
+    </view>
+  </view>
+
+  <!-- Métricas Principais -->
+  <view class="metrics-grid">
+    <view class="metric-card">
+      <text class="metric-label">Peso Atual</text>
+      <text class="metric-value">{{metricas.peso.atual}}kg</text>
+      <text class="metric-change">-{{metricas.peso.inicial - metricas.peso.atual}}kg</text>
+    </view>
+    <view class="metric-card">
+      <text class="metric-label">IMC</text>
+      <text class="metric-value">{{metricas.imc.valor}}</text>
+      <text class="metric-status">{{metricas.imc.classificacao}}</text>
+    </view>
+  </view>
+
+  <!-- Progresso -->
+  <view class="progress-section">
+    <view class="section-header">
+      <text class="section-title">Progresso para Meta</text>
+      <text class="section-subtitle">Meta: {{metricas.peso.meta}}kg</text>
+    </view>
+    <progress 
+      class="progress-bar"
+      percent="{{((metricas.peso.inicial - metricas.peso.atual) / (metricas.peso.inicial - metricas.peso.meta)) * 100}}"
+      stroke-width="12"
+      activeColor="#4CAF50"
+      backgroundColor="#E8F5E9"
+    />
+  </view>
+
+  <!-- Medidas Corporais -->
+  <view class="measures-section">
+    <view class="section-header">
+      <text class="section-title">Medidas Corporais</text>
+      <button class="add-button" bindtap="registrarMedida">+ Nova Medida</button>
+    </view>
+    <view class="measures-grid">
+      <view class="measure-item">
+        <text class="measure-label">Braço</text>
+        <text class="measure-value">{{metricas.medidasCorporais.braco}}cm</text>
+      </view>
+      <view class="measure-item">
+        <text class="measure-label">Cintura</text>
+        <text class="measure-value">{{metricas.medidasCorporais.cintura}}cm</text>
+      </view>
+      <view class="measure-item">
+        <text class="measure-label">Quadril</text>
+        <text class="measure-value">{{metricas.medidasCorporais.quadril}}cm</text>
+      </view>
+      <view class="measure-item">
+        <text class="measure-label">Coxa</text>
+        <text class="measure-value">{{metricas.medidasCorporais.coxa}}cm</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Nutrientes -->
+  <view class="nutrients-section">
+    <text class="section-title">Consumo de Nutrientes</text>
+    <view class="nutrient-item">
+      <view class="nutrient-info">
+        <text class="nutrient-label">Proteínas</text>
+        <text class="nutrient-value">{{metricas.nutrientes.proteinas.consumido}}/{{metricas.nutrientes.proteinas.meta}}g</text>
+      </view>
+      <progress 
+        class="nutrient-progress"
+        percent="{{(metricas.nutrientes.proteinas.consumido / metricas.nutrientes.proteinas.meta) * 100}}"
+        stroke-width="8"
+        activeColor="#4CAF50"
+        backgroundColor="#E8F5E9"
+      />
+    </view>
+    <view class="nutrient-item">
+      <view class="nutrient-info">
+        <text class="nutrient-label">Carboidratos</text>
+        <text class="nutrient-value">{{metricas.nutrientes.carboidratos.consumido}}/{{metricas.nutrientes.carboidratos.meta}}g</text>
+      </view>
+      <progress 
+        class="nutrient-progress"
+        percent="{{(metricas.nutrientes.carboidratos.consumido / metricas.nutrientes.carboidratos.meta) * 100}}"
+        stroke-width="8"
+        activeColor="#4CAF50"
+        backgroundColor="#E8F5E9"
+      />
+    </view>
+    <view class="nutrient-item">
+      <view class="nutrient-info">
+        <text class="nutrient-label">Gorduras</text>
+        <text class="nutrient-value">{{metricas.nutrientes.gorduras.consumido}}/{{metricas.nutrientes.gorduras.meta}}g</text>
+      </view>
+      <progress 
+        class="nutrient-progress"
+        percent="{{(metricas.nutrientes.gorduras.consumido / metricas.nutrientes.gorduras.meta) * 100}}"
+        stroke-width="8"
+        activeColor="#4CAF50"
+        backgroundColor="#E8F5E9"
+      />
+    </view>
+  </view>
+
+  <!-- Botões de Ação -->
+  <view class="action-buttons">
+    <button class="action-button" bindtap="verHistorico">Ver Histórico Completo</button>
+    <button class="action-button outline" bindtap="definirMetas">Definir Metas</button>
+  </view>
+</view> 

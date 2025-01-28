@@ -1,0 +1,16 @@
+{
+  "description": "Arquivo de configuração do projeto",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {},
+  "compileType": "miniprogram",
+  "projectType": 0,
+  "appid": "66cf6cb4fd25860001c2daac",
+  "projectname": "DietasFit",
+  "isGameTourist": false,
+  "isFulljs": false,
+  "buildOption": {
+    "compilerSource": "wx"
+  }
+}

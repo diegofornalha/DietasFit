@@ -1,0 +1,25 @@
+<!--pages/API/get-network-type/get-network-type.wxml-->
+<import src="../../common/head.wxml" />
+<import src="../../common/foot.wxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'navigationBar'}}"/>
+
+  <view class="page-body">
+    <view class="page-section">
+      <view class="btn-area">
+        <view>Exibir animação de carregamento na barra de navegação da página atual</view>
+        <button type="primary" bindtap="showNavigationBarLoading">Exibir Carregamento</button>
+        <button type="primary" bindtap="hideNavigationBarLoading">Ocultar Carregamento</button>
+
+        <view>Definir dinamicamente o título da página atual</view>
+        <button type="primary" bindtap="setNavigationBarTitle">Definir Título</button>
+
+        <view>Definir a cor da barra de navegação da página</view>
+        <button type="primary" bindtap="setNavigationBarColor">Definir Cor</button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

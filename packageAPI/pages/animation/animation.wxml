@@ -1,0 +1,46 @@
+<import src="../../common/head.wxml" />
+<import src="../../common/foot.wxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'createAnimation'}}"/>
+
+  <view class="page-body">
+    <view class="page-section">
+
+      <view class="animation-element-wrapper">
+        <view class="animation-element" animation="{{animation}}"></view>
+      </view>
+      <view class="btn-row">
+        <button class="animation-button" bindtap="rotate">Girar</button>
+        <button class="animation-button" bindtap="scale">Redimensionar</button>
+      </view>
+      <view class="btn-row">
+        <button class="animation-button" bindtap="translate">Mover</button>
+        <button class="animation-button" bindtap="skew">Inclinar</button>
+      </view>
+      <view class="btn-row">
+        <button class="animation-button" bindtap="rotateAndScale">Girar e Redimensionar</button>
+        <button class="animation-button" bindtap="rotateThenScale">Girar e depois Redimensionar</button>
+      </view>
+      <view class="btn-row">
+        <button class="animation-button" bindtap="all">Mostrar Tudo Junto</button>
+        <button class="animation-button" bindtap="allInQueue">Mostrar Tudo em Sequência</button>
+      </view>
+      <view class="btn-row">
+        <button class="animation-button animation-button-reset" bindtap="reset">Restaurar</button>
+      </view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="page-section-title">
+      <text>Animação por Keyframes\n\nA partir da versão 2.9.0 da biblioteca básica do Mini Programa, é suportada uma forma mais amigável de criar animações, substituindo o antigo wx.createAnimation</text>
+    </view>  
+    <view id="container1" style="{{containerStyle1}}">
+      <button class="block1" style="width: 300rpx; margin: 100rpx auto;">Botão de Exemplo</button>
+      <a class="block1" style="display: block; margin: 100rpx auto; width: 300rpx; text-align: center;">Exemplo de Link</a>
+      <text class="block1" style="display: block; margin: 100rpx auto; width: 300rpx; text-align: center;">Exemplo de Texto</text>
+    </view>
+    <button type="primary" bindtap="change">Iniciar Animação</button>
+  </view>
+  <template is="foot" />
+</view>

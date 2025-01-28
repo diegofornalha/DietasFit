@@ -1,0 +1,25 @@
+{
+  "description": "Arquivo de configuração do projeto",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "es6": true,
+    "useOldBuilder": false,
+    "skipCompileWatch": true,
+    "urlCheck": false,
+    "proxy": {
+      "enable": true,
+      "target": "ws://192.168.1.18:8002/proxy"
+    }
+  },
+  "compileType": "miniprogram",
+  "projectname": "DietasFit",
+  "isGameTourist": false,
+  "isFulljs": false,
+  "appid": "66cf6cb4fd25860001c2daac",
+  "projectType": 0,
+  "buildOption": {
+    "compilerSource": "wx"
+  }
+}

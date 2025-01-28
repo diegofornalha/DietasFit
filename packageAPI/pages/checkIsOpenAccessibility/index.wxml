@@ -1,0 +1,6 @@
+<view>
+  <view>
+    Status de Acessibilidade Ativada:  {{status}}
+  </view>
+  <button type="primary" bindtap="checkIsOpenAccessibility">checkIsOpenAccessibility</button>
+</view>

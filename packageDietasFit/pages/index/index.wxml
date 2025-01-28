@@ -1,0 +1,86 @@
+<view class="container">
+  <!-- Cabeçalho com informações do usuário -->
+  <view class="header">
+    <view class="user-info">
+      <image class="avatar" src="{{userInfo.avatarUrl || '/images/default-avatar.png'}}"></image>
+      <view class="welcome">
+        <text class="greeting">Olá, {{userInfo.nickName || 'Visitante'}}</text>
+        <text class="date">{{currentDate}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Resumo das métricas diárias -->
+  <view class="metrics-summary">
+    <view class="metric-card">
+      <text class="metric-value">{{metricas.calorias}}</text>
+      <text class="metric-label">Calorias</text>
+    </view>
+    <view class="metric-card">
+      <text class="metric-value">{{metricas.proteinas}}g</text>
+      <text class="metric-label">Proteínas</text>
+    </view>
+    <view class="metric-card">
+      <text class="metric-value">{{metricas.carboidratos}}g</text>
+      <text class="metric-label">Carboidratos</text>
+    </view>
+    <view class="metric-card">
+      <text class="metric-value">{{metricas.gorduras}}g</text>
+      <text class="metric-label">Gorduras</text>
+    </view>
+  </view>
+
+  <!-- Metas diárias -->
+  <view class="daily-goals">
+    <text class="section-title">Metas Diárias</text>
+    <view class="goals-grid">
+      <view class="goal-item">
+        <image class="goal-icon" src="/images/water-icon.png"></image>
+        <text class="goal-value">{{metasDiarias.agua}}ml</text>
+        <text class="goal-label">Água</text>
+      </view>
+      <view class="goal-item">
+        <image class="goal-icon" src="/images/steps-icon.png"></image>
+        <text class="goal-value">{{metasDiarias.passos}}</text>
+        <text class="goal-label">Passos</text>
+      </view>
+      <view class="goal-item">
+        <image class="goal-icon" src="/images/calories-icon.png"></image>
+        <text class="goal-value">{{metasDiarias.calorias}}kcal</text>
+        <text class="goal-label">Meta Calórica</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Refeições do dia -->
+  <view class="meals-section">
+    <text class="section-title">Refeições de Hoje</text>
+    <view class="meals-list">
+      <block wx:for="{{refeicoesDiarias}}" wx:key="horario">
+        <view class="meal-card">
+          <view class="meal-header">
+            <text class="meal-name">{{item.nome}}</text>
+            <text class="meal-time">{{item.horario}}</text>
+          </view>
+          <view class="meal-foods">
+            <text wx:for="{{item.alimentos}}" wx:key="*this" wx:for-item="alimento" class="food-item">{{alimento}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- Botões de ação -->
+  <view class="action-buttons">
+    <button class="action-btn" bindtap="navegarParaPlanoAlimentar">
+      Ver Plano Alimentar
+    </button>
+    <button class="action-btn" bindtap="navegarParaReceitas">
+      Explorar Receitas
+    </button>
+    <button class="action-btn map-btn" bindtap="navegarParaRestaurantes">
+      <icon type="location" size="18" color="#ffffff"/>
+      <text>Encontrar Restaurantes</text>
+    </button>
+  </view>
+</view> 

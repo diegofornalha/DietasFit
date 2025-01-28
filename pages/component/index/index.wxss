@@ -1,0 +1,35 @@
+@import "../../common/index.wxss";
+
+.weui-agree__link {
+  display: inline;
+  color: var(--weui-LINK);
+}
+
+.dietas-fit-button-container {
+  padding: 20rpx 30rpx;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dietas-fit-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 24rpx 48rpx;
+  border-radius: 12rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 6rpx 12rpx rgba(76, 175, 80, 0.2);
+  transition: all 0.3s ease;
+  width: 80%;
+  max-width: 600rpx;
+}
+
+.dietas-fit-button-hover {
+  background-color: #45a049;
+  transform: translateY(2rpx);
+  box-shadow: 0 4rpx 8rpx rgba(76, 175, 80, 0.15);
+}

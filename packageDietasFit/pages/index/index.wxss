@@ -1,0 +1,207 @@
+.container {
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* Estilos do cabeçalho */
+.header {
+  background-color: #ffffff;
+  padding: 30rpx;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+}
+
+.greeting {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.date {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 4rpx;
+}
+
+/* Estilos das métricas */
+.metrics-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.metric-card {
+  background-color: #ffffff;
+  padding: 20rpx;
+  border-radius: 15rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.metric-value {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.metric-label {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 8rpx;
+}
+
+/* Estilos das metas diárias */
+.daily-goals {
+  background-color: #ffffff;
+  padding: 30rpx;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.goals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20rpx;
+}
+
+.goal-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.goal-icon {
+  width: 60rpx;
+  height: 60rpx;
+  margin-bottom: 10rpx;
+}
+
+.goal-value {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.goal-label {
+  font-size: 24rpx;
+  color: #666;
+}
+
+/* Estilos das refeições */
+.meals-section {
+  background-color: #ffffff;
+  padding: 30rpx;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.meals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.meal-card {
+  background-color: #f8f8f8;
+  padding: 20rpx;
+  border-radius: 15rpx;
+}
+
+.meal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.meal-name {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.meal-time {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.meal-foods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+}
+
+.food-item {
+  font-size: 24rpx;
+  color: #666;
+  background-color: #ffffff;
+  padding: 6rpx 16rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid #eee;
+}
+
+/* Estilos dos botões de ação */
+.action-buttons {
+  padding: 20rpx;
+  margin-top: 20rpx;
+}
+
+.action-btn {
+  width: 100%;
+  margin-bottom: 20rpx;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 10rpx;
+  font-size: 32rpx;
+  padding: 20rpx 0;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.map-btn {
+  background-color: #FF5722;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rpx;
+}
+
+.map-btn icon {
+  margin-right: 4rpx;
+}
+
+.map-btn:active {
+  background-color: #f4511e;
+  transform: translateY(2rpx);
+} 
